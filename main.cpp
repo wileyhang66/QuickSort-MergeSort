@@ -25,3 +25,23 @@ struct DataRecord {
 	double daysAwayRT;
 	double totalCaseRate;
 };
+
+//Data records are sorted by total case rate.
+bool compare(const DataRecord &a, const DataRecord &b) {
+	return a.totalCaseRate < b.totalCaseRate;
+}
+ 
+//load data
+vector<DataRecord> loadData(const string &filename);
+
+//quick sort
+void quickSort(vector<DataRecord> &records);
+
+//merge sort 
+void mergeSort(vector<DataRecord> &records);
+
+//Load the data and output the sorting time
+void testSort(const string &filename);
+
+//create data file
+void createDataFiles();
